@@ -1,0 +1,6 @@
+#EMACS-RELATED IGNORES
+*~
+[#]*[#]
+
+#SASS-RELATED IGNORES
+.sass-cache

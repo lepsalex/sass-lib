@@ -1,0 +1,23 @@
+/**
+ * Author: Alex Lepsa
+ *
+ * Purpose: font-face mixin
+ *
+ * @param $fontname (string) image file name to set as the background (without extension)
+ * @param $filepath (string) file path (defaults to '../fonts/')
+ *
+ * Usage: @include font-face('FontName', 'FileName', '../fonts/', normal, normal);
+ */
+
+@mixin font-face ($fontname, $filename, $filepath: '../fonts/', $weight: 'normal', $style: 'normal') {
+  @font-face {
+    font-family: $fontname;
+    src: url('#{$filepath}#{$filename}.eot');
+    src: url('#{$filepath}#{$filename}.eot?#iefix') format('embedded-opentype'),
+    url('#{$filepath}#{$filename}.woff') format('woff'),
+    url('#{$filepath}#{$filename}.ttf') format('truetype'),
+    url('#{$filepath}#{$filename}.svg##{$filename}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

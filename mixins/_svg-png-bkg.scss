@@ -1,0 +1,16 @@
+/**
+ * Author: Alex Lepsa
+ *
+ * Purpose: Sets the SVG background image and dimensions
+ * 
+ * @param $image (string) image file name to set as the background (without extension)
+ * @param $w [OPTIONAL] (mixed) width of the background image (default: auto)
+ * @param $h [OPTIONAL] (mixed) height of the backgroundimage (default: auto)
+ */
+
+@mixin svg-png-bkg($image, $w: auto, $h: auto) {
+  background-image: url('../images/#{$image}.png');
+  background-image: url('../images/#{$image}.svg');
+  background-size: $w $h;
+  background-repeat: no-repeat;
+}

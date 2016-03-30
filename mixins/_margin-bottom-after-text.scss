@@ -1,0 +1,13 @@
+/**
+ * Author: Alex Lepsa
+ *
+ * Purpose: Margin-bottom After Text
+ *
+ * Usage: @include mat(desired-mb, elem font-size, elem line-height);
+ */
+
+@mixin mat($desired, $fs, $lh) {
+    $ratio: 8 * ($fs / $lh);
+    $comp: $desired - ($lh - $fs) - floor($ratio);
+    margin-bottom: floor($comp) + px;
+}
