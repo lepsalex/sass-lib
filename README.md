@@ -1,4 +1,4 @@
-# SASS Mixins #
+# SASS Mixins and Functions #
 
 ### Purpose: ###
 
