@@ -1,15 +1,18 @@
-/**
- * Author: Alan Drees
- *
- * Purpose: Convert from pixels to em on the fly, with a globally-deined method base pixel height
- *
- * Usage: @include px2em(<pixels>)
- */
+/*
+*
+* Author: Alex Lepsa
+* Usage: @include px2em(<pixels>)
+*
+*/
 
-@function evoke-px2em($px){
-    @if variable_exists(em_pixels_base) == true{
-	@return ($px / $em_pixel_base)em; //TODO: Add rounding method
-    }@else{
-	@error "Pixel base is unset.  Pixel base is required.";
-    }
+@function px2em($pixels, $context: 16) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
 }
